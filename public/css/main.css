@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Aller;
+    src: url(../font/Aller_Rg.ttf);
+}
+
+body {
+    background-color: #3f3f3f;
+    font-family: 'Aller', sans-serif;
+}
+.box {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border: 3px solid pink;
+    background-color: #333;
+}
+
+a {
+    background: 0 0;
+    color: #4183C4;
+    text-decoration: none;
+}
+
+.titleAndDesc {
+    color: white;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "filehost",
+  "version": "1.0.0",
+  "description": "File sharing site",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-fileupload": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qewc/rapeis.fun.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qewc/rapeis.fun/issues"
+  },
+  "homepage": "https://github.com/qewc/rapeis.fun#readme"
+}
