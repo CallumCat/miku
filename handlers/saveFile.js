@@ -41,7 +41,7 @@ app.post("/up", (req, res) => {
         if (err) {
             return res.end(err.message)
         }
-        res.end("http://" + req.headers.host + "/" + filename)
+        res.end("http://" + req.headers.host + "/ss/" + filename)
     })
 })
 

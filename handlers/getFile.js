@@ -15,7 +15,7 @@ function findFile(filename, callback) {
     callback("file not found", null);
 }
 
-app.get("*", function (req, res) {
+app.get("/*", function (req, res) {
     var slashescount = req.url.split("/").length;
     var filefound = false;
     var usersFile;

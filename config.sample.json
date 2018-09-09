@@ -1,0 +1,14 @@
+{
+	"db": {
+		"host": "localhost",
+		"username": "root",
+		"password": "",
+		"database": ""
+    },
+    "server": {
+        "port": "",
+        "adminUsername": "",
+        "adminPassword": "",
+        "secret": ""
+    }
+}
