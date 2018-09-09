@@ -3,6 +3,7 @@ const app = express();
 const md5 = require("md5");
 const passport = require("passport");
 const { query } = require("../objects/db")
+const config = require("../config.json")
 
 function generate() {
     var text = "";
@@ -17,7 +18,8 @@ function generate() {
 app.get("/admin", (req, res) => {
     if (req.user === 1) {
         res.render("admin", {
-            url: req.headers.url
+            url: req.headers.url,
+            apiKey: config.server.privateapikey
         });
     } else {
         res.end("You aren't the administrator, you aren't allowed to see this page.")

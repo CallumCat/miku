@@ -20,7 +20,7 @@
             <script>
                 var request = new XMLHttpRequest();
 
-                request.open("GET", '/api/getKeys', true);
+                request.open("GET", '/api/v1/getKeys&k=' + "<%= apiKey %>", true);
                 request.onload = function () {
 
                     var data = JSON.parse(this.response);
