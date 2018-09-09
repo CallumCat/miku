@@ -10,11 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
     <style>
-        img {
-            width: 500px;
-            height: 250px;
-            padding: 5px;
-        }
     </style>
 </head>
 
@@ -38,10 +33,21 @@
                         
                         var img = document.createElement("img");
                         img.src = src;
+                        var linkText = document.createTextNode("View Image: ");
 
-                        var newLine = document.createElement("br")
-                        appObj.appendChild(img); 
+                        var a = document.createElement("a")
+                        a.href = "/" + el.fn;
+                        a.appendChild(linkText);
+
+                        appObj.appendChild(a);
+                        var newLine = document.createElement("br");
                         appObj.appendChild(newLine);
+                        appObj.appendChild(newLine);
+                        appObj.appendChild(newLine)
+                        appObj.appendChild(newLine)
+                        appObj.appendChild(newLine);
+                        appObj.appendChild(img); 
+                        
                     });
                 }
                 request.send()

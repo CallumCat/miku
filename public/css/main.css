@@ -7,6 +7,13 @@ body {
     background-color: #3f3f3f;
     font-family: 'Aller', sans-serif;
 }
+img {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+}
 #box {
     position: absolute;
     margin: auto;
@@ -15,12 +22,16 @@ body {
     text-align: center;
     border: 3px solid pink;
     background-color: #333;
+    padding: 10px;
 }
 
 a {
+
+    display: block;
     background: 0 0;
     color: #4183C4;
     text-decoration: none;
+    text-align: center;
 }
 
 .titleAndDesc {
