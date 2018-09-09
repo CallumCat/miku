@@ -66,7 +66,7 @@ app.post("/up", (req, res) => {
                 return res.end(err.message)
             }
             insert(user, filename)
-                res.end("http://" + req.headers.host + "/ss/" + filename)
+                res.end("http://" + req.headers.host + "/" + filename)
         })
     })
 
