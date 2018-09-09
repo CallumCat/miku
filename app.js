@@ -28,7 +28,7 @@ app.use(passport.session());
 app.use(require("./handlers/homepage"))
 app.use(require("./handlers/login"))
 app.use(require("./handlers/panel"))
-app.use(require("./handlers/AdminPanel"))
+app.use(require("./handlers/adminPanel"))
 app.use(require("./handlers/apiGetAllKeys"))
 app.use(require("./handlers/apiGetFiles"))
 app.use(require("./handlers/register"))
