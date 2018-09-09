@@ -22,6 +22,9 @@ app.post("/login", (req, res) => {
     loginChecker(username, password).then(user => {
         if (user.length > 0) {
             var u = user[0]
+            if (u.token === "revoked") {
+                res.end("<html><body>You are banned. Reason: " + u.ban_reason);
+            }
             req.login(u, function(err) { 
                 if (err) throw (err);
                 res.redirect("/panel")

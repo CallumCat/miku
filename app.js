@@ -28,10 +28,12 @@ app.use(passport.session());
 app.use(require("./handlers/homepage"))
 app.use(require("./handlers/login"))
 app.use(require("./handlers/panel"))
+app.use(require("./handlers/AdminPanel"))
+app.use(require("./handlers/apiGetAllKeys"))
 app.use(require("./handlers/apiGetFiles"))
 app.use(require("./handlers/register"))
 app.use(require("./handlers/getFile"))
 app.use(require("./handlers/saveFile"))
 
 
-app.listen(80)
+app.listen(config.server.port)

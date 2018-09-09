@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        <%= url %> - Panel
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="titleAndDesc">
+            <h1>Administration</h1>
+            <script>
+                var request = new XMLHttpRequest();
+
+                request.open("GET", '/api/getKeys', true);
+                request.onload = function () {
+
+                    var data = JSON.parse(this.response);
+                    data.forEach(el => {
+                        var pgraph = document.createElement("p");
+                        var text = document.createTextNode("id: " + el.id + " token: " + el.t)
+                        pgraph.appendChild(text);
+                        var element = document.getElementById("box");
+                        element.appendChild(pgraph);
+                    });
+                }
+                request.send()
+            </script>
+            <p>Generate some keys</p>
+            <form method="POST" action="/generate">
+                <div class="field">
+                        <input tabindex="1" type="number" name="amount" placeholder="Amount" value="" required><br>
+                    </div>
+                    <button tabindex="3" class="blueButton" type="submit">Submit</button>
+            </form><br><br><br><br>
+            <p>Ban a user</p>
+            <form method="POST" action="/ban">
+                <div class="field">
+                        <input tabindex="1" type="text" name="user" placeholder="User to ban" value="" required><br>
+                        <input tabindex="1" type="text" name="reason" placeholder="Reason for ban" value="" required><br>
+                    </div>
+                    <button tabindex="3" class="blueButton" type="submit">Submit</button>
+            </form><br><br><br><br>
+            <form method="POST" action="/unban">
+                <div class="field">
+                        <input tabindex="1" type="text" name="user" placeholder="User to unban" value="" required><br>
+                    </div>
+                    <button tabindex="3" class="blueButton" type="submit">Submit</button>
+            </form><br><br><br><br>
+            <h4>Available Keys:</h3>
+                <style>
+                p {
+                    color: white;
+                }    
+                </style>
+        </div>
+    </div>
+</body>
+
+</html>
