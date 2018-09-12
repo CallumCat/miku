@@ -15,15 +15,21 @@
             <div class="navContents">
                 <a id="hatsunai" href="/"><%= url %></a>
                 <break>  &bull;   </break>
+                <% if (loggedIn) { %>
                 <a id="navlink" href="#">Files</a>
                 <break>  &bull;   </break>
+                <% } %>
                 <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
                 <break>  &bull;   </break>
                 <a id="navlink" href="/info">Information</a>
                 <div class="right">
+                    <% if (!loggedIn) { %>
                     <a id="navlink" href="/login">Login</a>
                     <break>  &bull;   </break>
                     <a id="navlink" href="/register">Register</a>
+                    <% } else { %>
+                    <p>Welcome, <% user %></p>
+                    <% } %>
                 </div>
             </div>
         </div>
