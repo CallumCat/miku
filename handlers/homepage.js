@@ -2,14 +2,14 @@ const express = require("express");
 const app = express();
 const { query } = require("../objects/db");
 
-async function usersStuff(i) {
-    const q = await query("SELECT * FROM users WHERE id = ?", i)
+async function usersStuff() {
+    const q = await query("SELECT * FROM users")
     return q
 }
 
 app.get("/", (req, res) => {
-    usersStuff(req.user).then(q => {
-        console.log(q)
+    usersStuff().then(q => {
+        console.log(q[req.user])
         if (req.user) {
             res.render("index", {
                 url: req.headers.host,
