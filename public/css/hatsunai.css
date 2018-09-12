@@ -27,10 +27,6 @@ body {
 .titleAndDesc {
     color: white;
 }
-#right {
-    argin-top: -20px;
-    color: white;
-}
 break {
     margin-left: 3px;
     margin-right: 3px;
@@ -70,6 +66,7 @@ a {
 .right {
     margin-top: -20px;
     text-align: right;
+    color: white;
 }
 
 .right > #navlink {
