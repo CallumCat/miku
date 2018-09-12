@@ -27,7 +27,7 @@ body {
 .titleAndDesc {
     color: white;
 }
-.welcome {
+#right > .welcome {
     margin-left: -10px;
     margin-top: -20px;
     color: white;
