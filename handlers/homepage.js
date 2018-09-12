@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
             res.render("index", {
                 url: req.headers.host,
                 loggedIn: req.isAuthenticated(),
-                username: q[0].username
+                username: q[req.user].username
             });
         } else {
             res.render("index", {
