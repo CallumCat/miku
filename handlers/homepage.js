@@ -9,6 +9,7 @@ async function usersStuff(i) {
 
 app.get("/", (req, res) => {
     usersStuff(req.user).then(q => {
+        console.log(q)
         if (req.user) {
             res.render("index", {
                 url: req.headers.host,
@@ -19,7 +20,7 @@ app.get("/", (req, res) => {
             res.render("index", {
                 url: req.headers.host,
                 loggedIn: req.isAuthenticated(),
-                username: ""
+                username: "" 
             });
         }
     })
