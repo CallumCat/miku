@@ -2,19 +2,17 @@ const express = require("express");
 const app = express();
 const { query } = require("../objects/db");
 
-async function usersStuff() {
-    const q = await query("SELECT * FROM users")
-    return q
+async function getUByID(id) {
+    return await query("SELECT * FROM users WHERE id = ?", id)
 }
 
 app.get("/", (req, res) => {
-    usersStuff().then(q => {
-        console.log(q[req.user])
+    getUByID(req.user).then(user => {
         if (req.user) {
             res.render("index", {
                 url: req.headers.host,
                 loggedIn: req.isAuthenticated(),
-                username: q[req.user].username
+                username: user[0].username
             });
         } else {
             res.render("index", {
