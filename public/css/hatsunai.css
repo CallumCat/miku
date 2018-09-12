@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Aller;
+    src: url(../font/Aller_Rg.ttf);
+}
+#container {
+    position: relative;
+    min-height: calc(100vh - 75px);
+  }
+body {
+    background-color: #3f3f3f;
+    font-family: 'Aller', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#box {
+    position: absolute;
+    margin: auto;
+    width: 50%;
+    left: 25%;
+    top: 100px;
+    text-align: center;
+    border: 3px solid white;
+    box-shadow: 5px 4px #2e2c2c;
+    background-color: #333;
+    padding: 10px;
+}
+.titleAndDesc {
+    color: white;
+}
+
+
+break {
+    margin-left: 3px;
+    margin-right: 3px;
+    border-top: 1px solid #ccc;
+    border: 0;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: pink;
+}
+
+.container {
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #4f4f4f;
+    position: absolute;
+    border: 100px green;
+}
+
+.navContents > #navlink {
+    color: #4183C4;
+}
+.navContents > #hatsunai {
+    color: aqua;
+    font-size: 20.25px;
+}
+.navContents {
+    margin: 10px;
+}
+
+
+.right {
+    margin-top: -20px;
+    text-align: right;
+}
+
+.right > #navlink {
+    color: #4183C4;
+}

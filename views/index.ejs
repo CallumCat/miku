@@ -4,27 +4,41 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>
-        <%= url %>
-    </title>
+    <title>Home - url.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/hatsunai.css" />
 </head>
 
 <body>
-    <div id="box">
-        <div class="titleAndDesc">
-            <a href="https://discord.gg/55UdUhq">
-                <h1>
-                    <%= url %>
-                </h1>
-            </a>
-            <p>
-                <%= url %> is a File Sharing website run by <a href="mailto:contact@ilyt.cc">ilyt</a>.</p>
-            <p>If anything illegal gets uploaded here, please contact me via <a href="mailto:contact@ilyt.cc">email</a>,
-                or via <a href="https://discord.gg/55UdUhq">discord</a></p>
-            <p><a href="/login">Login</a> or <a href="/register">Register</a></p>
-            <p><a href="https://selly.gg/p/96d3ecaf">Buy a key</a></p>
+    <div class="container">
+        <div class="navbar">
+            <div class="navContents">
+                <a id="hatsunai" href="/"><%= url %></a>
+                <break>  &bull;   </break>
+                <a id="navlink" href="#">Files</a>
+                <break>  &bull;   </break>
+                <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
+                <break>  &bull;   </break>
+                <a id="navlink" href="/info">Information</a>
+                <div class="right">
+                    <a id="navlink" href="/login">Login</a>
+                    <break>  &bull;   </break>
+                    <a id="navlink" href="/register">Register</a>
+                </div>
+            </div>
+        </div>
+        <div id="box">
+            <div class="titleAndDesc">
+                <a href="https://discord.gg/55UdUhq">
+                    <h1>
+                        <%= url %>
+                    </h1>
+                </a>
+                <p>
+                    <%= url %> is a File Sharing website run by <a href="mailto:contact@ilyt.cc">ilyt</a>.</p>
+                <p>If anything illegal gets uploaded here, please contact me via <a href="mailto:contact@ilyt.cc">email</a>,
+                    or via <a href="https://discord.gg/55UdUhq">discord</a></p>
+            </div>
         </div>
     </div>
 </body>
