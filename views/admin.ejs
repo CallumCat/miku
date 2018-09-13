@@ -12,75 +12,79 @@
 </head>
 
 <body>
+    <div class="container">
         <div class="navbar">
-                <div class="navContents">
-                    <a id="hatsunai" href="/"><%= url %></a>
-                    <break>  &bull;   </break>
-                    <% if (loggedIn) { %>
-                    <a id="navlink" href="#">Files</a>
-                    <break>  &bull;   </break>
+            <div class="navContents">
+                <a id="hatsunai" href="/">
+                    <%= url %></a>
+                <break> &bull; </break>
+                <% if (loggedIn) { %>
+                <a id="navlink" href="#">Files</a>
+                <break> &bull; </break>
+                <% } %>
+                <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
+                <break> &bull; </break>
+                <a id="navlink" href="/info">Information</a>
+                <div class="right">
+                    <% if (!loggedIn) { %>
+                    <a id="navlink" href="/login">Login</a>
+                    <break> &bull; </break>
+                    <a id="navlink" href="/register">Register</a>
+                    <% } else { %>
+                    Welcome,
+                    <%= username %>
                     <% } %>
-                    <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
-                    <break>  &bull;   </break>
-                    <a id="navlink" href="/info">Information</a>
-                    <div class="right">
-                        <% if (!loggedIn) { %>
-                        <a id="navlink" href="/login">Login</a>
-                        <break>  &bull;   </break>
-                        <a id="navlink" href="/register">Register</a>
-                        <% } else { %>
-                        Welcome, <%= username %>
-                        <% } %>
-                    </div>
                 </div>
             </div>
-    <div id="box">
-        <div class="titleAndDesc">
-            <h1>Administration</h1>
-            <script>
-                var request = new XMLHttpRequest();
+        </div>
+        <div id="box">
+            <div class="titleAndDesc">
+                <h1>Administration</h1>
+                <script>
+                    var request = new XMLHttpRequest();
 
-                request.open("GET", '/api/v1/getKeys&k=' + "<%= apiKey %>", true);
-                request.onload = function () {
+                    request.open("GET", '/api/v1/getKeys&k=' + "<%= apiKey %>", true);
+                    request.onload = function () {
 
-                    var data = JSON.parse(this.response);
-                    data.forEach(el => {
-                        var pgraph = document.createElement("p");
-                        var text = document.createTextNode("id: " + el.id + " token: " + el.t)
-                        pgraph.appendChild(text);
-                        var element = document.getElementById("box");
-                        element.appendChild(pgraph);
-                    });
-                }
-                request.send()
-            </script>
-            <p>Generate some keys</p>
-            <form method="POST" action="/generate">
-                <div class="field">
+                        var data = JSON.parse(this.response);
+                        data.forEach(el => {
+                            var pgraph = document.createElement("p");
+                            var text = document.createTextNode("id: " + el.id + " token: " + el.t)
+                            pgraph.appendChild(text);
+                            var element = document.getElementById("box");
+                            element.appendChild(pgraph);
+                        });
+                    }
+                    request.send()
+                </script>
+                <p>Generate some keys</p>
+                <form method="POST" action="/generate">
+                    <div class="field">
                         <input tabindex="1" type="number" name="amount" placeholder="Amount" value="" required><br>
                     </div>
                     <button tabindex="3" class="blueButton" type="submit">Submit</button>
-            </form><br><br><br><br>
-            <p>Ban a user</p>
-            <form method="POST" action="/ban">
-                <div class="field">
+                </form><br><br><br><br>
+                <p>Ban a user</p>
+                <form method="POST" action="/ban">
+                    <div class="field">
                         <input tabindex="1" type="text" name="user" placeholder="User to ban" value="" required><br>
                         <input tabindex="1" type="text" name="reason" placeholder="Reason for ban" value="" required><br>
                     </div>
                     <button tabindex="3" class="blueButton" type="submit">Submit</button>
-            </form><br><br><br><br>
-            <form method="POST" action="/unban">
-                <div class="field">
+                </form><br><br><br><br>
+                <form method="POST" action="/unban">
+                    <div class="field">
                         <input tabindex="1" type="text" name="user" placeholder="User to unban" value="" required><br>
                     </div>
                     <button tabindex="3" class="blueButton" type="submit">Submit</button>
-            </form><br><br><br><br>
-            <h4>Available Keys:</h3>
-                <style>
-                p {
-                    color: white;
-                }    
-                </style>
+                </form><br><br><br><br>
+                <h4>Available Keys:</h3>
+                    <style>
+                        p {
+                            color: white;
+                        }
+                    </style>
+            </div>
         </div>
     </div>
 </body>

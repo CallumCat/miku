@@ -12,44 +12,48 @@
 </head>
 
 <body>
+    <div class="container">
         <div class="navbar">
-                <div class="navContents">
-                    <a id="hatsunai" href="/"><%= url %></a>
-                    <break>  &bull;   </break>
-                    <% if (loggedIn) { %>
-                    <a id="navlink" href="#">Files</a>
-                    <break>  &bull;   </break>
+            <div class="navContents">
+                <a id="hatsunai" href="/">
+                    <%= url %></a>
+                <break> &bull; </break>
+                <% if (loggedIn) { %>
+                <a id="navlink" href="#">Files</a>
+                <break> &bull; </break>
+                <% } %>
+                <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
+                <break> &bull; </break>
+                <a id="navlink" href="/info">Information</a>
+                <div class="right">
+                    <% if (!loggedIn) { %>
+                    <a id="navlink" href="/login">Login</a>
+                    <break> &bull; </break>
+                    <a id="navlink" href="/register">Register</a>
+                    <% } else { %>
+                    Welcome,
+                    <%= username %>
                     <% } %>
-                    <a id="navlink" href="https://discord.gg/55UdUhq">Discord</a>
-                    <break>  &bull;   </break>
-                    <a id="navlink" href="/info">Information</a>
-                    <div class="right">
-                        <% if (!loggedIn) { %>
-                        <a id="navlink" href="/login">Login</a>
-                        <break>  &bull;   </break>
-                        <a id="navlink" href="/register">Register</a>
-                        <% } else { %>
-                        Welcome, <%= username %>
-                        <% } %>
-                    </div>
                 </div>
             </div>
-    <div id="box">
-
-        <div class="login">
-            <form method="post" action="/login">
-                <div class="field">
-                    <label>Username: </label><br>
-                    <input tabindex="1" type="text" name="username" placeholder="Username" value="" required><br>
-                </div>
-                <div class="field">
-                    <label>Password: </label><br>
-                    <input tabindex="2" type="password" name="password" placeholder="Password" value="" required><br>
-                </div>
-                <button tabindex="3" class="blueButton" type="submit">Submit</button>
-            </form>
         </div>
-    </div>
+        <div id="box">
+
+            <div class="login">
+                <form method="post" action="/login">
+                    <div class="field">
+                        <label>Username: </label><br>
+                        <input tabindex="1" type="text" name="username" placeholder="Username" value="" required><br>
+                    </div>
+                    <div class="field">
+                        <label>Password: </label><br>
+                        <input tabindex="2" type="password" name="password" placeholder="Password" value="" required><br>
+                    </div>
+                    <button tabindex="3" class="blueButton" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        </div>
 </body>
 
 </html>
