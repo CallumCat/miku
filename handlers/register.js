@@ -8,7 +8,9 @@ const path = require("path");
 
 app.get("/register", (req, res) => {
     res.render("register", {
-        url: req.headers.host
+        url: req.headers.host,
+        loggedIn: req.isAuthenticated(),
+        username: ""
     });
 });
 

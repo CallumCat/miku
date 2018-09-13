@@ -15,7 +15,8 @@ app.get("/panel", (req, res) => {
         res.render("panel", {
             url: req.headers.host,
             username: user[0].username,
-            token: user[0].token
+            token: user[0].token,
+            username: user[0].username
         })
     })
 

@@ -6,7 +6,9 @@ const { query } = require("../objects/db")
 
 app.get("/login", (req, res) => {
     res.render("login", {
-        url: req.headers.host
+        url: req.headers.host,
+        loggedIn: req.isAuthenticated(),
+        username: ""
     });
 });
 

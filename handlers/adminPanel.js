@@ -17,10 +17,23 @@ function generate() {
 
 app.get("/admin", (req, res) => {
     if (req.user === 1) {
-        res.render("admin", {
-            url: req.headers.url,
-            apiKey: config.server.privateapikey
-        });
+        getUByID(req.user).then(user => {
+            if (req.user) {
+                res.render("admin", {
+                    url: req.headers.host,
+                    apiKey: config.server.privateapikey,
+                    loggedIn: req.isAuthenticated(),
+                    username: user[0].username
+                });
+            } else {
+                res.render("index", {
+                    url: req.headers.host,
+                    apiKey: config.server.privateapikey,
+                    loggedIn: req.isAuthenticated(),
+                    username: user[0].username
+                });
+            }
+        })
     } else {
         res.end("You aren't the administrator, you aren't allowed to see this page.")
     }
@@ -62,7 +75,7 @@ app.post("/ban", (req, res) => {
 });
 app.post("/unban", (req, res) => {
     const user = req.body.user;
-    
+
     unban(user).then(xd => {
         res.end("<html><body>User account unbanned. <a href='/admin'>Go back.</a>")
     })
