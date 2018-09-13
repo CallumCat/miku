@@ -16,7 +16,8 @@ app.get("/panel", (req, res) => {
             url: req.headers.host,
             username: user[0].username,
             token: user[0].token,
-            username: user[0].username
+            username: user[0].username,
+            loggedIn: req.isAuthenticated()
         })
     })
 
