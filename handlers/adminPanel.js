@@ -4,7 +4,9 @@ const md5 = require("md5");
 const passport = require("passport");
 const { query } = require("../objects/db")
 const config = require("../config.json")
-
+async function getUByID(id) {
+    return await query("SELECT * FROM users WHERE id = ?", id)
+}
 function generate() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
