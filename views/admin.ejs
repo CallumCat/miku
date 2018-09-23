@@ -49,7 +49,7 @@
                         var data = JSON.parse(this.response);
                         data.forEach(el => {
                             var pgraph = document.createElement("p");
-                            var text = document.createTextNode("id: " + el.id + " token: " + el.t)
+                            var text = document.createTextNode(el.t)
                             pgraph.appendChild(text);
                             var element = document.getElementById("box");
                             element.appendChild(pgraph);
